@@ -23,7 +23,7 @@
         //从公历对象转为农历对象
         solarDate.ToChineseDate(chineseDate);
         //获取当年的公历年份对应的农历的年代和甲子年份
-        std::pair<int, int> p=ChineseCalendarDB::GetEraAndYearOfLunar([self.year intValue]);
+        std::pair<int, int> p=ChineseCalendarDB::GetEraAndYearOfLunar(chineseDate.GetYear());
         
         //设置当前时间的农历日期字段
         self.era=[NSString stringWithFormat:@"%d", p.first];
